@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="img/good.png" id="good" onclick="clickgood()" width="300px" height="300px" value="unselected" style="border: 4px solid black; border-radius: 50%">
+<img src="img/fast.png" id="fast" onclick="clickfast()" width="300px" height="300px" value="unselected" style="border: 4px solid black; border-radius: 50%">
+<img src="img/Cheap.png" id="Cheap" onclick="clickCheap()" width="300px" height="300px" value="unselected" style="border: 4px solid black; border-radius: 50%">
+<script>
+    const good=document.getElementById('good');
+    const fast=document.getElementById('fast');
+    const Cheap=document.getElementById('Cheap');
+    function clickgood() {
+        if(good.value==='unselected')
+        {
+            good.value="selected";
+            good.style="border: 4px solid red ; border-radius: 50%";
+        }
+        else
+            {
+                good.value="unselected";
+                good.style="border: 4px solid black ; border-radius: 50%";
+            }
+        Check();
+    }
+    function clickfast() {
+        if(fast.value==='unselected')
+        {
+            fast.value="selected";
+            fast.style="border: 4px solid red ; border-radius: 50%";
+        }
+        else
+        {
+            fast.value="unselected";
+            fast.style="border: 4px solid black ; border-radius: 50%";
+        }
+        Check();
+    }
+    function clickCheap() {
+        if(Cheap.value==='unselected')
+        {
+            Cheap.value="selected";
+            Cheap.style="border: 4px solid red ; border-radius: 50%";
+        }
+        else
+        {
+            Cheap.value="unselected";
+            Cheap.style="border: 4px solid black ; border-radius: 50%";
+        }
+        Check();
+    }
+    function Check() {
+        var random=Math.floor(Math.random() * 3)+1;
+        if(good.value==='selected'&&fast.value==='selected'&&Cheap.value==='selected')
+        {
+            switch (random) {
+                case 1:
+                    clickCheap();
+                    break;
+                case 2:
+                    clickfast();
+                    break;
+                case 3:
+                    clickgood();
+                    break;
+            }
+        }
+    }
+</script>
+</body>
+</html>
